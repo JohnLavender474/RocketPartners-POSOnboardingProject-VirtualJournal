@@ -1,6 +1,7 @@
-package com.rocketpartners.onboarding.possystem;
+package com.rocketpartners.onboarding.posvirtualjournal;
 
 import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  * A virtual journal for a point of sale system.
@@ -31,7 +32,8 @@ public class POSVirtualJournal {
         while (true) {
             try {
                 System.out.println("Waiting for connection...");
-                serverSocket.accept();
+                Socket clientSocket = serverSocket.accept();
+                new ClientHandler(clientSocket).start();
                 System.out.println("Connection accepted!");
             } catch (Exception e) {
                 System.err.println("Error accepting connection: " + e.getMessage());

@@ -1,4 +1,4 @@
-package com.rocketpartners.onboarding.possystem;
+package com.rocketpartners.onboarding.posvirtualjournal;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import java.net.Socket;
  */
 public class ClientHandler extends Thread {
 
-    private Socket clientSocket;
+    private final Socket clientSocket;
     private BufferedReader in;
 
     /**
@@ -31,7 +31,7 @@ public class ClientHandler extends Thread {
         try {
             String line;
             while ((line = in.readLine()) != null) {
-                System.out.println("Received: " + line);
+                JournalPrinter.print(line);
             }
         } catch (Exception e) {
             System.err.println("Error reading from client: " + e.getMessage());

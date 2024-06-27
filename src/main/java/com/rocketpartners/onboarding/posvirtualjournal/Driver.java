@@ -1,4 +1,4 @@
-package com.rocketpartners.onboarding.possystem;
+package com.rocketpartners.onboarding.posvirtualjournal;
 
 /**
  * The main entry point for the point of sale virtual journal.
