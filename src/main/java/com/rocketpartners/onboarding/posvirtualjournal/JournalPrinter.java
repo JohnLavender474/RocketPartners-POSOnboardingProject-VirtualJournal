@@ -1,5 +1,7 @@
 package com.rocketpartners.onboarding.posvirtualjournal;
 
+import lombok.NonNull;
+
 /**
  * Prints messages to the journal.
  */
@@ -10,7 +12,7 @@ public class JournalPrinter {
      *
      * @param message the message to print
      */
-    public static void print(String message) {
+    public static void print(@NonNull String message) {
         System.out.println(message);
     }
 }

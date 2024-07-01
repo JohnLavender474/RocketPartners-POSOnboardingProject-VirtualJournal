@@ -22,7 +22,13 @@ public class Driver {
         } else {
             port = DEFAULT_PORT;
         }
+
         POSVirtualJournal journal = new POSVirtualJournal(port);
-        journal.start();
+        journal.run();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Shutting down POS virtual journal");
+            journal.stop();
+        }));
     }
 }
