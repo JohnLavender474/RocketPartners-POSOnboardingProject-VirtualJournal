@@ -25,6 +25,7 @@ javac -d out src/main/java/com/rocketpartners/onboarding/possystem/*.java
 ```
 
 ## Usage
+
 ### Running the Server
 To start the POS Virtual Journal server, run the Driver class. You can specify the port to listen on via command-line arguments. If no port is specified, the default port 12345 is used.
 
